@@ -1,0 +1,6 @@
+- url: "https://twitter.com/ant1441"
+  text: twitter
+  class: twitter
+- url: "http://github.com/ant1441"
+  text: github
+  class: github

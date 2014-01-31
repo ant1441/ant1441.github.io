@@ -1,0 +1,21 @@
+<div class="sidebar-module sidebar-about">
+  <h4>About</h4>
+  <p class="sidebar-about-text">
+    {{ site.about }}
+  </p>
+</div>
+<div class="sidebar-module sidebar-history">
+  <h4>History</h4>
+</div>
+<div class="sidebar-module sidebar-external">
+  <h4>External Links</h4>
+  <ul class="list-unstyled">
+    {% for external in site.data.external %}
+    <li>
+    <a href="{{ external.url }}" class="{{ external.class }}">
+      {{ external.text }}
+    </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
