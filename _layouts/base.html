@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ page.author }}">
     <meta name="description" content="{{ page.description }}">
+    <meta name="generated" content="{{ site.time | date_to_xmlschema }}">
     <link rel="shortcut icon" href="img/ico/favicon.ico">
     
     <!-- main css -->
@@ -26,22 +27,9 @@
         <h1 class="blog-title">{{ site.title }}</h1>
         <p class="lead blog-description">Musings of a young tester</p>
       </div>
-      <div class="col-sm-8 blog-main">
-        {{ content }}
-      </div>
-      <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-        {% include sidebar.html %}
-      </div>
+      {{ content }}
     </div>
-    <div class="blog-footer">
-      <p>
-      Blog templates written by <a href="https://twitter.com/ant1441" class="twitter">@ant1441</a> using <a href="http://getbootstrap.com/">Bootsrap</a>
-      </p>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/js/jquery-2.1.0.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
-  </script>
+    {% include footer.html %}
+    {% include js.html %}
   </body>
 </html>

@@ -1,8 +1,9 @@
 ---
-layout: layout
+layout: post
 title: Hello World
 author: Adam
-description: My first post
+description: My first post on GitHub pages, using Jekyll
+tags: simple markdown
 ---
 
 This is my first post on my [GitHub Pages]({{ site.url }}).
@@ -12,7 +13,7 @@ I also hope to use this as a place to improve several of my skills, including co
 I hope to write about my professional experiences and achievements.
 I am usually very bad at projects like these, so I hope I am able to keep this up.
 
-This allows me to write posts using a simple text editor (<kbd>vim</kbd>) to write posts and <kbd>git</kbd> to keep track of the site.
+Jekyll allows me to write posts using a simple text editor to write posts and use <kbd>git</kbd> to keep track of the site.
 I can include inline code `puts "Hello World"` and multiline code like this:
 
 {% highlight python %}
