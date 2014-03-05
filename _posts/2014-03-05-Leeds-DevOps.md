@@ -14,7 +14,7 @@ I also had some interesting discussions with [@RightSaidJames](https://twitter.c
 ## Open Data
 
 Mark Barret, speaking first on *Open Data* in Leeds was discussing the upcoming launch of [Leeds Data Thing](http://www.leedsdatathing.co.uk/) this Thursday.
-Open Data is a powerful tool in giving government, both local and national, both accountibility for a lot of it's actions, but also for utilising the skills of the people in gaining a greater understanding of the data they have available.
+Open Data is a powerful tool in giving government, both local and national, both accountibility for a lot of it's actions, but also for making use of the skills of the people in gaining a greater understanding of the data they have available.
 
 Leeds Data Thing is aiming to make Leeds a world leader in Open Data.
 Mark discussed how [Gov.uk](http://gov.uk) has several thousands of data sets from government, but only a few hundred from local councils.
@@ -28,7 +28,7 @@ This, gathered from a dozen places in the city centre will allow visualisations 
 I would be very interested to link this with other data to see how local conditions affect this (eg. what areas of Leeds are quite during the day, but busy at night, when bars open/close?).
 
 ## JuJu
-Next up was Simon Davy of [Canonical](http://www.canonical.com/) speaking on JuJu, a tool to allow deployment of services with minimal fuss, while utilising allowing product expertise.
+Next up was Simon Davy of [Canonical](http://www.canonical.com/) speaking on JuJu, a tool to allow deployment of services with minimal fuss, while making use of existing product expertise.
 
 JuJu is a tool allowing the use of *Charms*, open source configurations, to deploy your application to any given cloud provider including your own laptop.
 This enables very rapid deployment of hadoop, OpenStack etc. while allowing experts in these tools to include experience & skill gained expertise in the charms.
