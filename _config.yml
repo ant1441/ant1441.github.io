@@ -1,5 +1,6 @@
 pygments: true
 
 # Custom variables
-title: Test Introspection
+title: A Tester's Blog
+subtitle: Writing about Testing, Software, Knowledge and Mathematics
 about: "Mathematician, Tester, Python coder. I am live in Leeds, and work as a senior test consultant for a small test consultancy based here."

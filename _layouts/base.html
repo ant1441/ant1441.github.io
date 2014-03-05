@@ -12,6 +12,12 @@
     <!-- main css -->
     <link href="/css/style.css" media="all" rel="stylesheet" type="text/css" />
     <link href="/css/syntax.css" media="all" rel="stylesheet" type="text/css" />
+    {% if post && post.css %}
+      {% for css in post.css %}
+        <link href='css/{{ css }}.css' media="all" rel='stylesheet' type='text/css' />
+      {% endfor %}
+    {% endif %}
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,7 +31,7 @@
     <div id="main" class="container">
       <div class="blog-header">
         <h1 class="blog-title">{{ site.title }}</h1>
-        <p class="lead blog-description">Musings of a young tester</p>
+        <p class="lead blog-description">{{ site.subtitle }}</p>
       </div>
       {{ content }}
     </div>

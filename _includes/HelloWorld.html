@@ -1,0 +1,607 @@
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="an-ipython-notebook">An IPython Notebook</h1>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cbook</span> <span class="kn">as</span> <span class="nn">cbook</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># We can execute python</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Hello World!
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># We can use modules, for example to make web requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;http://www.google.com&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[3]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&lt;Response [200]&gt;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># We can access external API&#39;s and parse their content</span>
+<span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;https://www.gov.uk/bank-holidays.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[4]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+{u&apos;england-and-wales&apos;: {u&apos;division&apos;: u&apos;england-and-wales&apos;,
+  u&apos;events&apos;: [{u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-01-02&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2012-04-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-04-09&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Easter Monday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-05-07&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-06-04&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-06-05&apos;,
+    u&apos;notes&apos;: u&apos;Extra bank holiday&apos;,
+    u&apos;title&apos;: u&apos;Queen\u2019s Diamond Jubilee&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-08-27&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2013-03-29&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-04-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Easter Monday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-05-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-05-27&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-08-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2014-04-18&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-04-21&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Easter Monday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-05-05&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-05-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-08-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2015-04-03&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-04-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Easter Monday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-05-04&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-05-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-08-31&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-12-28&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;}]},
+ u&apos;northern-ireland&apos;: {u&apos;division&apos;: u&apos;northern-ireland&apos;,
+  u&apos;events&apos;: [{u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-01-02&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-03-19&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;St Patrick\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2012-04-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-04-09&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Easter Monday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-05-07&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-06-04&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-06-05&apos;,
+    u&apos;notes&apos;: u&apos;Extra bank holiday&apos;,
+    u&apos;title&apos;: u&apos;Queen\u2019s Diamond Jubilee&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2012-07-12&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Battle of the Boyne (Orangemen\u2019s Day)&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-08-27&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-03-18&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;St Patrick\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2013-03-29&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-04-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Easter Monday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-05-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-05-27&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2013-07-12&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Battle of the Boyne (Orangemen\u2019s Day)&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-08-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-03-17&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;St Patrick\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2014-04-18&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-04-21&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Easter Monday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-05-05&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-05-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2014-07-14&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;Battle of the Boyne (Orangemen\u2019s Day)&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-08-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-03-17&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;St Patrick\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2015-04-03&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-04-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Easter Monday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-05-04&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-05-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2015-07-13&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;Battle of the Boyne (Orangemen\u2019s Day)&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-08-31&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-12-28&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;}]},
+ u&apos;scotland&apos;: {u&apos;division&apos;: u&apos;scotland&apos;,
+  u&apos;events&apos;: [{u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-01-02&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;2nd January&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-01-03&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2012-04-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-05-07&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-06-04&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-06-05&apos;,
+    u&apos;notes&apos;: u&apos;Extra bank holiday&apos;,
+    u&apos;title&apos;: u&apos;Queen\u2019s Diamond Jubilee&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-08-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-11-30&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;St Andrew\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2012-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-01-02&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;2nd January&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2013-03-29&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-05-06&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-05-27&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-08-05&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-12-02&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;St Andrew\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2013-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-01-02&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;2nd January&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2014-04-18&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-05-05&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-05-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-08-04&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-12-01&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;St Andrew\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2014-12-26&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-01-01&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;New Year\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-01-02&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;2nd January&apos;},
+   {u&apos;bunting&apos;: False,
+    u&apos;date&apos;: u&apos;2015-04-03&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Good Friday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-05-04&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Early May bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-05-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Spring bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-08-03&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Summer bank holiday&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-11-30&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;St Andrew\u2019s Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-12-25&apos;,
+    u&apos;notes&apos;: u&apos;&apos;,
+    u&apos;title&apos;: u&apos;Christmas Day&apos;},
+   {u&apos;bunting&apos;: True,
+    u&apos;date&apos;: u&apos;2015-12-28&apos;,
+    u&apos;notes&apos;: u&apos;Substitute day&apos;,
+    u&apos;title&apos;: u&apos;Boxing Day&apos;}]}}
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[*]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># We can draw graphs</span>
+<span class="n">figsize</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">get_sample_data</span><span class="p">(</span><span class="s">&#39;goog.npy&#39;</span><span class="p">)</span>
+<span class="n">price_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">recarray</span><span class="p">)</span>
+<span class="n">price_data</span> <span class="o">=</span> <span class="n">price_data</span><span class="p">[</span><span class="o">-</span><span class="mi">250</span><span class="p">:]</span> <span class="c"># get the most recent 250 trading days</span>
+
+<span class="n">delta1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">price_data</span><span class="o">.</span><span class="n">adj_close</span><span class="p">)</span><span class="o">/</span><span class="n">price_data</span><span class="o">.</span><span class="n">adj_close</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c"># Marker size in units of points^2</span>
+<span class="n">volume</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="n">price_data</span><span class="o">.</span><span class="n">volume</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="n">price_data</span><span class="o">.</span><span class="n">volume</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">close</span> <span class="o">=</span> <span class="mf">0.003</span> <span class="o">*</span> <span class="n">price_data</span><span class="o">.</span><span class="n">close</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mf">0.003</span> <span class="o">*</span> <span class="n">price_data</span><span class="o">.</span><span class="n">open</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">delta1</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">delta1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">c</span><span class="o">=</span><span class="n">close</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">volume</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">r&#39;$\Delta_i$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">r&#39;$\Delta_{i+1}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Volume and percent change&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre>
+</pre></div>
+
+</div>
+</div>
+
+</div>
